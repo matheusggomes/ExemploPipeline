@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     // Execute o Ant build
-                    bat 'ant'
+                    //bat 'ant'
                 }
             }
         }
