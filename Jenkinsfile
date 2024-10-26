@@ -8,9 +8,11 @@ pipeline {
         }
         stage('Build') {
             steps {
-                //sh 'ls -la' // Para Linux/Mac
-                // Para Windows, use:
-                 bat 'dir'
+                // Para Windows
+                bat 'javac src/ExemploPipeline.java' // Compila a classe
+
+                // Executa a classe (supondo que ela tenha um método main)
+                bat 'java -cp src ExemploPipeline'
             }
         }
     }
