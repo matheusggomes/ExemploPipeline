@@ -2,19 +2,35 @@ pipeline {
     agent any 
 
     stages {
-        stage('Build') {
+        stage('Checkout') {
             steps {
+                // Clona o repositório
+                git 'https://github.com/matheusggomes/ExemploPipeline.git'
+            }
+        }
+
+        stage('Compile') {
+            steps {
+                // Compila o código Java
                 script {
-                    // Execute o Ant build
-                    //bat 'ant'
+                    sh 'cd src && javac HelloWorld.java'
                 }
             }
         }
-        stage('Test') {
+
+        stage('Run') {
             steps {
-                // Adicione seus testes aqui, se necessário
-                echo 'Executing tests...'
+                // Executa o código Java
+                script {
+                    sh 'cd src && java HelloWorld'
+                }
             }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline finalizado!'
         }
     }
 }
