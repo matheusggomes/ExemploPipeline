@@ -9,7 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 // Para Windows
-                bat 'javac src/ExemploPipeline.java' // Compila a classe
+                bat 'javac src/exemplopipeline/ExemploPipeline.java' // Compila a classe
 
                 // Executa a classe (supondo que ela tenha um método main)
                 bat 'java -cp src ExemploPipeline'
