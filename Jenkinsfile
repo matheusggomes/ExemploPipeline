@@ -1,16 +1,19 @@
 pipeline {
-    agent any
+    agent any 
+
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                git 'https://github.com/matheusggomes/ExemploPipeline.git'
             }
         }
+
         stage('Build') {
             steps {
-                // Execute your build commands here
-                bat 'your-build-command.bat' // Use `bat` for Windows commands
+                bat 'ant'
             }
         }
+
+        // Adicione outros estágios conforme necessário
     }
 }
