@@ -1,10 +1,15 @@
 pipeline {
     agent any
     stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
         stage('Build') {
             steps {
-                // Certifique-se de que os comandos aqui estão corretos
-                sh 'make'
+                // Execute your build commands here
+                bat 'your-build-command.bat' // Use `bat` for Windows commands
             }
         }
     }
