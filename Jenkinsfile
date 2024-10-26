@@ -12,7 +12,9 @@ pipeline {
                 bat 'javac src/exemplopipeline/ExemploPipeline.java' // Compila a classe
 
                 // Executa a classe (supondo que ela tenha um método main)
-                bat 'java -cp src ExemploPipeline'
+                //bat 'java -cp src ExemploPipeline'
+                bat 'java -cp src exemplopipeline.ExemploPipeline'
+
             }
         }
     }
